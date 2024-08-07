@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2m0vo2a1uct7"]
+
+[ext_resource type="Theme" uid="uid://d3d5s6pmjbo6w" path="res://GameTheme.tres" id="1_h776e"]
+[ext_resource type="Texture2D" uid="uid://bfc4pira4ybxu" path="res://asset/images/escola/icons8-apagador-64.png" id="2_c1bj0"]
+[ext_resource type="PackedScene" uid="uid://bcynnyovi42rx" path="res://button_icon.tscn" id="2_x1h68"]
+[ext_resource type="AudioStream" uid="uid://1s2ghavhf3sf" path="res://asset/sounds/escola/gomme.mp3" id="3_7ihel"]
+[ext_resource type="AudioStream" uid="uid://chqmk8qp1subg" path="res://asset/sounds/escola/taillecrayon.mp3" id="5_veych"]
+[ext_resource type="Texture2D" uid="uid://e1ektwy7ncqk" path="res://asset/images/escola/icons8-apontador-de-lápis-94.png" id="5_whjhj"]
+[ext_resource type="Texture2D" uid="uid://bpbr57w6uti31" path="res://asset/images/escola/icons8-brocha-de-pintura-64.png" id="6_jajar"]
+[ext_resource type="Texture2D" uid="uid://cvdibtqeyly8t" path="res://asset/images/escola/icons8-cadeira-100.png" id="7_5dpvr"]
+[ext_resource type="AudioStream" uid="uid://bp5n6jrrxuhn" path="res://asset/sounds/escola/pinceau.mp3" id="7_bl6qy"]
+[ext_resource type="AudioStream" uid="uid://n1ngxdycrjrn" path="res://asset/sounds/escola/chaise.mp3" id="9_toan4"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="fundo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_h776e")
+color = Color(0.0196078, 0.0117647, 0.121569, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="fundo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="fundo2" type="ColorRect" parent="fundo/MarginContainer"]
+layout_mode = 2
+color = Color(0.0588235, 0.0392157, 0.231373, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="fundo/MarginContainer/fundo2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fundo/MarginContainer/fundo2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 108
+
+[node name="lblTitle" type="Label" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "clique na palavra e escolhe a imagem que corresponde"
+horizontal_alignment = 1
+
+[node name="BtnWord_to_find" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 61
+text = "nova palavra"
+
+[node name="GridContainer" type="GridContainer" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 90
+columns = 4
+
+[node name="ButtonIcon1" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_x1h68")]
+layout_mode = 2
+sound = ExtResource("3_7ihel")
+btn_icon = ExtResource("2_c1bj0")
+
+[node name="ButtonIcon2" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_x1h68")]
+layout_mode = 2
+sound = ExtResource("5_veych")
+btn_icon = ExtResource("5_whjhj")
+
+[node name="ButtonIcon3" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_x1h68")]
+layout_mode = 2
+sound = ExtResource("7_bl6qy")
+btn_icon = ExtResource("6_jajar")
+
+[node name="ButtonIcon4" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_x1h68")]
+layout_mode = 2
+sound = ExtResource("9_toan4")
+btn_icon = ExtResource("7_5dpvr")

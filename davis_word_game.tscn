@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwengnnw38ogj"]
+
+[ext_resource type="Script" path="res://davis_word_game.gd" id="1_xfqja"]
+[ext_resource type="Theme" uid="uid://d3d5s6pmjbo6w" path="res://GameTheme.tres" id="2_jg664"]
+[ext_resource type="Texture2D" uid="uid://cn6qa0vh2s6wb" path="res://icon.svg" id="2_n3f8o"]
+[ext_resource type="Texture2D" uid="uid://iuwhf8a7xx77" path="res://asset/images/escola/icons8-escola-100.png" id="3_vqu2x"]
+
+[node name="DavisWordGame" type="CanvasLayer"]
+script = ExtResource("1_xfqja")
+
+[node name="fundo" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_jg664")
+color = Color(0.0196078, 0.0117647, 0.121569, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="fundo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="fundo2" type="ColorRect" parent="fundo/MarginContainer"]
+layout_mode = 2
+color = Color(0.0588235, 0.0392157, 0.231373, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="fundo/MarginContainer/fundo2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="fundo/MarginContainer/fundo2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 63
+
+[node name="lblTitle" type="Label" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Escolhe uma categoria"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 22
+columns = 5
+
+[node name="Button1" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("3_vqu2x")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button3" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button4" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button5" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button6" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button7" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button8" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button9" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button10" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button11" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button12" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button13" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button14" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
+
+[node name="Button15" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+icon = ExtResource("2_n3f8o")
