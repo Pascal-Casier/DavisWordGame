@@ -1,5 +1,8 @@
-AudioStreamPlayer
 Button
+HBoxContainer
+AnimationPlayer
+TextureRect
+AudioStreamPlayer
 GridContainer
 CanvasLayer
 TextureButton

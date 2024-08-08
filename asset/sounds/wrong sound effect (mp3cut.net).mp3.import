@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3mdmbekodkgc"
+path="res://.godot/imported/wrong sound effect (mp3cut.net).mp3-8652de1934c0ce497772822184e05c47.mp3str"
+
+[deps]
+
+source_file="res://asset/sounds/wrong sound effect (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/wrong sound effect (mp3cut.net).mp3-8652de1934c0ce497772822184e05c47.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

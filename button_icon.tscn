@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcynnyovi42rx"]
+[gd_scene load_steps=4 format=3 uid="uid://bcynnyovi42rx"]
 
-[ext_resource type="Texture2D" uid="uid://bfc4pira4ybxu" path="res://asset/images/escola/icons8-apagador-64.png" id="1_bvcnu"]
 [ext_resource type="Script" path="res://scripts/button_icon.gd" id="2_qy2gc"]
+[ext_resource type="Texture2D" uid="uid://b14i82xc5qgtk" path="res://asset/images/escola/icons8-caderno-64.png" id="3_oulym"]
+[ext_resource type="Texture2D" uid="uid://cvdibtqeyly8t" path="res://asset/images/escola/icons8-cadeira-100.png" id="3_vbu77"]
 
 [node name="ButtonIcon" type="Button"]
-icon = ExtResource("1_bvcnu")
+custom_minimum_size = Vector2(125, 125)
+icon = ExtResource("3_oulym")
+icon_alignment = 1
 script = ExtResource("2_qy2gc")
+btn_icon = ExtResource("3_vbu77")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

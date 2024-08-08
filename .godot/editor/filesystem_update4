@@ -1,6 +1,8 @@
 res://davis_word_game.tscn
-res://davis_word_game.gd
 res://GameTheme.tres
 res://chap1.tscn
-res://scripts/button_icon.gd
 res://button_icon.tscn
+res://scripts/button_icon.gd
+res://scripts/chap1.gd
+res://scripts/Global.gd
+res://chap2.tscn
