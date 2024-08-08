@@ -1,0 +1,6 @@
+res://davis_word_game.tscn
+res://davis_word_game.gd
+res://GameTheme.tres
+res://chap1.tscn
+res://scripts/button_icon.gd
+res://button_icon.tscn
