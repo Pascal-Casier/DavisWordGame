@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://w5244qlicjeg"]
+
+[ext_resource type="Texture2D" uid="uid://8j3olccm50ga" path="res://asset/images/icons8-gostar-94.png" id="1_5nb2y"]
+[ext_resource type="Script" path="res://scripts/health_bar.gd" id="1_8utys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgsxl"]
+bg_color = Color(1, 0.0156863, 0.0156863, 1)
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpjfl"]
+bg_color = Color(0.0941176, 0.988235, 0, 1)
+border_width_right = 9
+border_blend = true
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+
+[node name="HealthBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8utys")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 298.0
+offset_bottom = 94.0
+
+[node name="Heart" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_5nb2y")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_qgsxl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dpjfl")
+value = 60.0

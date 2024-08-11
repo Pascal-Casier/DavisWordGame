@@ -138,3 +138,5 @@ icon = ExtResource("2_n3f8o")
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 icon = ExtResource("2_n3f8o")
+
+[connection signal="pressed" from="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer/Button1" to="." method="_on_button_1_pressed"]

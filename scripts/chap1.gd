@@ -26,9 +26,6 @@ func _ready() -> void:
 	audio_stream_player.stream = audio_stream_file
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func on_iconbtn_pressed(b):
 ####### CORRECT ANSWER##############
@@ -47,6 +44,7 @@ func on_iconbtn_pressed(b):
 		await get_tree().create_timer(1.0). timeout
 		animation_player.play("incorrect")
 		audio_result.play()
+		Global.damage.emit(33)
 	
 func _on_btn_word_to_find_pressed() -> void:
 	for b in grid_container.get_children():
@@ -54,6 +52,7 @@ func _on_btn_word_to_find_pressed() -> void:
 	audio_stream_player.play()
 
 func show_bottom_container():
+	
 	bottom_container.show()
 	if name != "chapter1":
 		%BtnPrevious.show()
@@ -72,3 +71,9 @@ func _on_btn_next_pressed() -> void:
 	var scene_path = "res://chap" + str(Global.chapter_nbr) + ".tscn"
 	if ResourceLoader.exists(scene_path):
 		get_tree().change_scene_to_file("res://chap" + str(Global.chapter_nbr) + ".tscn")
+	else:
+		get_tree().change_scene_to_file("res://davis_word_game.tscn")
+
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://davis_word_game.tscn")

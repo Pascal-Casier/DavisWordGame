@@ -8,10 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://1s2ghavhf3sf" path="res://asset/sounds/escola/gomme.mp3" id="3_7ihel"]
 [ext_resource type="AudioStream" uid="uid://chqmk8qp1subg" path="res://asset/sounds/escola/taillecrayon.mp3" id="5_veych"]
 [ext_resource type="Texture2D" uid="uid://e1ektwy7ncqk" path="res://asset/images/escola/icons8-apontador-de-lápis-94.png" id="5_whjhj"]
-[ext_resource type="Texture2D" uid="uid://cvdibtqeyly8t" path="res://asset/images/escola/icons8-cadeira-100.png" id="7_5dpvr"]
 [ext_resource type="Texture2D" uid="uid://cqdnlgbdadhel" path="res://asset/images/escola/icons8-quadro-negro-100.png" id="7_knube"]
 [ext_resource type="AudioStream" uid="uid://dpt3r2lmystg5" path="res://asset/sounds/escola/tableau.mp3" id="8_a147u"]
 [ext_resource type="AudioStream" uid="uid://n1ngxdycrjrn" path="res://asset/sounds/escola/chaise.mp3" id="9_toan4"]
+[ext_resource type="PackedScene" uid="uid://w5244qlicjeg" path="res://health_bar.tscn" id="13_kxywu"]
 [ext_resource type="Texture2D" uid="uid://dvgv8qliqvcmj" path="res://asset/images/incorrect.png" id="13_vc2xf"]
 
 [sub_resource type="Animation" id="Animation_fw2h7"]
@@ -105,11 +105,18 @@ color = Color(0.0588235, 0.0392157, 0.231373, 1)
 
 [node name="ResultIconCorrect" type="TextureRect" parent="fundo/MarginContainer/fundo2"]
 visible = false
-layout_mode = 2
-offset_left = 514.0
-offset_top = 284.5
-offset_right = 608.0
-offset_bottom = 378.5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -19.0
+offset_right = 47.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("3_6y0ov")
 
@@ -127,12 +134,13 @@ theme_override_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="fundo/MarginContainer/fundo2/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 115
+theme_override_constants/separation = 90
 
 [node name="lblTitle" type="Label" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "clique na palavra e escolhe a imagem que corresponde"
+text = "clique na palavra e escolhe
+ a imagem que corresponde"
 horizontal_alignment = 1
 
 [node name="BtnWord_to_find" type="Button" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer"]
@@ -167,7 +175,6 @@ btn_icon = ExtResource("7_knube")
 
 [node name="ButtonIcon4" parent="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("2_x1h68")]
 layout_mode = 2
-icon = ExtResource("7_5dpvr")
 btn_sound = ExtResource("9_toan4")
 
 [node name="BottomContainer" type="HBoxContainer" parent="fundo/MarginContainer"]
@@ -190,9 +197,45 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 41
 text = "=>"
 
+[node name="HealthBar" parent="fundo" instance=ExtResource("13_kxywu")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 25.0
+offset_top = 30.0
+offset_right = 25.0
+offset_bottom = 30.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="BtnMenu" type="Control" parent="fundo"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Menu" type="Button" parent="fundo/BtnMenu"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "MENU"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="AudioResult" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -202,3 +245,4 @@ libraries = {
 [connection signal="pressed" from="fundo/MarginContainer/fundo2/MarginContainer/VBoxContainer/BtnWord_to_find" to="." method="_on_btn_word_to_find_pressed"]
 [connection signal="pressed" from="fundo/MarginContainer/BottomContainer/BtnPrevious" to="." method="_on_btn_previous_pressed"]
 [connection signal="pressed" from="fundo/MarginContainer/BottomContainer/BtnNext" to="." method="_on_btn_next_pressed"]
+[connection signal="pressed" from="fundo/BtnMenu/Menu" to="." method="_on_menu_pressed"]
